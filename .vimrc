@@ -80,14 +80,15 @@ set spell				" Enable spell checker
 set noshowmode				" Airline already shows current mode, no need to repeat
 " }}}
 " Leader Shortcuts {{{
-let mapleader=","			" value for <leader> variable. Most user-shortcuts start with it
+let mapleader=","				" value for <leader> variable. Most user-shortcuts start with it
 
 nnoremap <leader>f :FZF<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>e :<C-u>NERDTree %<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>a :Ag<cr>
-nnoremap <leader>h :<C-u>nohlsearch<cr>	" Stop highlighting search results
+nnoremap <leader>h :<C-u>nohlsearch<cr>		" Stop highlighting search results
+nnoremap <leader>c :SyntasticToggleMode<cr>	" Toggle syntactic checking
 " }}}
 " Line Shortcuts {{{
 " move vertically by visual line
