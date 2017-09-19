@@ -91,8 +91,14 @@ nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>a :Ag<cr>
 nnoremap <leader>h :<C-u>nohlsearch<cr>		" Stop highlighting search results
 nnoremap <leader>c :SyntasticToggleMode<cr>	" Toggle syntactic checking
-nnoremap <leader>tl :set background=light
-nnoremap <leader>td :set background=dark
+nnoremap <leader>t :call ToggleBackground()<cr>
+function! ToggleBackground()
+  if &background == "dark"
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
 " }}}
 " Line Shortcuts {{{
 " move vertically by visual line
