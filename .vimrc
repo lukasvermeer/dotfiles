@@ -25,6 +25,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show Git status in Nerdtree
 Plugin 'junegunn/fzf'			" Fuzzy file name search
 Plugin 'junegunn/fzf.vim'
 Plugin 'Gundo'				" Interactive visual undo tree
+Plugin 'NLKNguyen/papercolor-theme'	" https://vimawesome.com/plugin/papercolor-theme
 
 call vundle#end()
 filetype plugin indent on		" Required by Vundle
@@ -59,9 +60,10 @@ nnoremap <space> za			" space open/closes folds
 " }}}
 " Colors {{{
 set t_Co=256
-colorscheme molokai
+set background=dark
+colorscheme PaperColor
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='molokai'
+let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 " }}}
 " UI Layout {{{
@@ -89,6 +91,8 @@ nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>a :Ag<cr>
 nnoremap <leader>h :<C-u>nohlsearch<cr>		" Stop highlighting search results
 nnoremap <leader>c :SyntasticToggleMode<cr>	" Toggle syntactic checking
+nnoremap <leader>tl :set background=light
+nnoremap <leader>td :set background=dark
 " }}}
 " Line Shortcuts {{{
 " move vertically by visual line
