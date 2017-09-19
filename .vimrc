@@ -19,7 +19,6 @@ Plugin 'airblade/vim-gitgutter'		" Git diff in the gutter (next to line numbers)
 Plugin 'scrooloose/syntastic'		" Syntax check, linters and stuff
 Plugin 'scrooloose/nerdtree'		" Fancy file tree browser
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show Git status in Nerdtree
-Plugin 'solarized'
 Plugin 'junegunn/fzf'			" Fuzzy file name search
 Plugin 'junegunn/fzf.vim'
 
@@ -34,7 +33,7 @@ nnoremap <leader>e :<C-u>NERDTree %<cr>
 " this output doesn't include symlinks, so less duplicates in output
 let $FZF_DEFAULT_COMMAND = 'find . -type f | grep -v ".git"'
 
-" Plugin config 
+" Plugin configuration 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -46,19 +45,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Syntax check for perl
+" Syntax check for Perl
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl']
 set iskeyword-=:			" Don't treat Foo::Bar as a single word
 
 " Fancy colors
-set background=dark
 set t_Co=256
-colorscheme solarized
-let g:solarized_termcolors=256
-let g:airline_solarized_bg='dark'
+colorscheme molokai
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 
 " Editor layout settings
