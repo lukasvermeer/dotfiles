@@ -99,8 +99,8 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Open a screen if you're not in a screen.
-if [ -z "$STY" ] && [ -t 1 ]; then screen -R container; fi
+# Open a screen if you're not in a screen and not on a Mac.
+if [ -z "$STY" ] && [ -t 1 ] && [ $(uname -s) != "Darwin" ]; then screen -R container; fi
 
 # Ignore ctrl-d, so I don't kill the screen all the time like an idiot.
 set -o ignoreeof
