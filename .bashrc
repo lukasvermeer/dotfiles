@@ -104,3 +104,7 @@ if [ -z "$STY" ] && [ -t 1 ] && [ $(uname -s) != "Darwin" ]; then screen -R cont
 
 # Ignore ctrl-d, so I don't kill the screen all the time like an idiot.
 set -o ignoreeof
+
+# Fucks might be given, but I prefer less typing ffs.
+eval $(thefuck --alias)
+alias ffs=fuck
