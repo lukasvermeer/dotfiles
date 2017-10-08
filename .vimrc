@@ -73,6 +73,8 @@ set list				" Show tabs and spaces
 set number				" Show line numbers.
 set rnu						" Show relative line numbers.
 set tabstop=2				" Display tab as two spaces wide
+set shiftwidth=2		" Indent two spaces
+set expandtab				" Use spaces instead of tabs
 set cursorline				" Highlight current line
 set hlsearch				" When there is a previous search pattern, highlight all its matches
 set incsearch				" Jump to found words when typing search pattern
