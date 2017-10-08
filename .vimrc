@@ -71,6 +71,7 @@ set laststatus=2			" Always show the status line (bottom of the screen)
 set listchars=tab:>-,trail:.		" Show all tabs and trailing spaces
 set list				" Show tabs and spaces
 set number				" Show line numbers.
+set rnu						" Show relative line numbers.
 set tabstop=2				" Display tab as two spaces wide
 set cursorline				" Highlight current line
 set hlsearch				" When there is a previous search pattern, highlight all its matches
