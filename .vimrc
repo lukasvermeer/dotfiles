@@ -87,6 +87,7 @@ let mapleader=","				" value for <leader> variable. Most user-shortcuts start wi
 
 nnoremap <leader>f :FZF<cr>
 nnoremap <leader>g :Gstatus<cr>
+nnoremap <leader>p :Gpull --rebase <bar> Gpush<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>e :<C-u>NERDTree %<cr>
 nnoremap <leader>u :GundoToggle<cr>
