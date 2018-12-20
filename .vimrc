@@ -40,16 +40,19 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " }}}
 " Syntax Checking {{{
-let g:syntastic_mode_map = {"mode": "active"}
+let g:syntastic_mode_map = {"mode": "passive"}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Syntax check for Perl
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl']
 set iskeyword-=:                             " Don't treat Foo::Bar as a single word
+
+" Syntax check for JavaScript
+let g:syntastic_javascript_checkers = ['eslint']
 " }}}
 " Folding {{{
 set foldenable                               " enable folding
@@ -95,7 +98,7 @@ nnoremap <leader>e :<C-u>NERDTree %<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>a :Ag<cr>
 nnoremap <leader>h :<C-u>nohlsearch<cr>      " Stop highlighting search results
-nnoremap <leader>c :SyntasticToggleMode<cr>  " Toggle syntactic checking
+nnoremap <leader>c :SyntasticCheck<cr>  " Toggle syntactic checking
 nnoremap <leader>t :call ToggleBackground()<cr>
 function! ToggleBackground()
   if &background == "dark"
