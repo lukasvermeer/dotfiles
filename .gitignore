@@ -30,3 +30,9 @@
 ehthumbs.db
 Thumbs.db
 *.swp
+
+# Sonarcloud files #
+####################
+
+.scannerwork/
+sonar-project.properties
