@@ -19,7 +19,7 @@ Plugin 'tpope/vim-fugitive'                  " Git
 Plugin 'vim-airline/vim-airline'             " Nice status bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'              " Git diff in the gutter (next to line numbers)
-Plugin 'scrooloose/syntastic'                " Syntax check, linters and stuff
+Plugin 'w0rp/ale'                            " Syntax check, linters and stuff
 Plugin 'scrooloose/nerdtree'                 " Fancy file tree browser
 Plugin 'junegunn/fzf'                        " Fuzzy file name search
 Plugin 'junegunn/fzf.vim'
@@ -40,16 +40,15 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " }}}
 " Syntax Checking {{{
-let g:syntastic_mode_map = {"mode": "active"}
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
 
-" Syntax check for Perl
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl']
-set iskeyword-=:                             " Don't treat Foo::Bar as a single word
+" Run both javascript and vue linters for vue files.
+let b:ale_linter_aliases = ['javascript', 'vue']
+" Select the eslint and vls linters.
+let b:ale_linters = ['eslint', 'vls']
+
+let g:ale_fixers = { 'javascript': ['eslint']}
 " }}}
 " Folding {{{
 set foldenable                               " enable folding
@@ -95,7 +94,7 @@ nnoremap <leader>e :<C-u>NERDTree %<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>a :Ag<cr>
 nnoremap <leader>h :<C-u>nohlsearch<cr>      " Stop highlighting search results
-nnoremap <leader>c :SyntasticToggleMode<cr>  " Toggle syntactic checking
+nnoremap <leader>c :ALEFix<cr>  " Auto fix code
 nnoremap <leader>t :call ToggleBackground()<cr>
 function! ToggleBackground()
   if &background == "dark"
