@@ -3,4 +3,4 @@
 # /dev/mapper/blue	/mnt/Blue	ext4	defaults,noauto,user	  0	  0
 
 echo "Da ba dee da ba dai"
-sudo cryptsetup luksOpen /dev/sda1 blue && mount /mnt/Blue && ls -lah /mnt/Blue
+sudo cryptsetup luksOpen /dev/disk/by-uuid/c82756b6-c2c8-47b4-a2f8-5438408a0cea blue && mount /mnt/Blue && ls -lah /mnt/Blue
